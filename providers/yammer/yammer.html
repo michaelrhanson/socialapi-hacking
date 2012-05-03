@@ -1,0 +1,22 @@
+<!DOCTYPE HTML> <html> <head></head> <body>
+<script data-app-id="hyB2pTvrL36Y50py8EWj6A" src="https://assets.yammer.com/platform/yam.js"></script>
+<script> yam.connect.embedFeed(
+{ container: '#embedded-feed'
+, network: 'mozilla.com'
+});
+
+// send the worker the currentUser data
+var yamInit = window.setInterval(function() {
+  if (yam.currentUser) {
+    window.clearInterval(yamInit);
+    dump("user is "+JSON.stringify(yam.currentUser)+"\n");
+    navigator.mozSocial.getWorker().port.postMessage(
+      {topic: "yam.currentUser", data: yam.currentUser}
+    );
+  }
+}, 100);
+
+</script>
+<div id="embedded-feed"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+diff --git a/modules/defaultServices.jsm b/modules/defaultServices.jsm
+--- a/modules/defaultServices.jsm
++++ b/modules/defaultServices.jsm
+@@ -47,6 +47,30 @@ function frecencyForUrl(host)
+ // be maintained in the case the user does not have any logins or frecency.
+ // the mediator will enable via login and frecency, and sort by frecency.
+ var builtins = [
++
++  {
++    name: "Yammer",
++    iconURL: "https://www.yammer.com/favicon.ico",
++    workerURL: "resource://socialdev/providers/yammer/worker.js",
++    sidebarURL: "resource://socialdev/providers/yammer/yammer.html",
++    URLPrefix: "https://www.yammer.com",
++  },
++  {
++    name: "Twitter",
++    iconURL: "resource://socialdev/providers/twitter/twitter.png",
++    workerURL: "resource://socialdev/providers/twitter/twworker.js",
++    sidebarURL: "https://www.twitter.com/",
++    URLPrefix: "https://www.twitter.com/",
++    contentPatchPath: "resource://socialdev/providers/twitter/twcontentpatch.js"
++  },
++  {
++    "name":"Google",
++    "iconURL":"https://mail.google.com/favicon.ico",
++    "sidebarURL":"https://m.google.com/app/plus/mp/460/#~loop:svt=circles&view=stream",
++    "URLPrefix":"https://m.google.com/app/plus/"
++  }
++
++
+ ];
+ 
+ function installBuiltins() {
