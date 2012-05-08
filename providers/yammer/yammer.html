@@ -9,7 +9,6 @@
 var yamInit = window.setInterval(function() {
   if (yam.currentUser) {
     window.clearInterval(yamInit);
-    dump("user is "+JSON.stringify(yam.currentUser)+"\n");
     navigator.mozSocial.getWorker().port.postMessage(
       {topic: "yam.currentUser", data: yam.currentUser}
     );
