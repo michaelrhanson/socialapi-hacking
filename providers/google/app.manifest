@@ -1,0 +1,10 @@
+{
+  "services": {
+    "social": {
+      "name":"Google",
+      "iconURL":"https://mail.google.com/favicon.ico",
+      "sidebarURL":"https://m.google.com/app/plus/mp/460/#~loop:svt=circles&view=stream",
+      "URLPrefix":"https://m.google.com/app/plus/"
+    }
+  }
+}
