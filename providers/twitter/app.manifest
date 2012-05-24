@@ -5,7 +5,7 @@
       "iconURL": "resource://socialdev/providers/twitter/twitter.png",
       "workerURL": "resource://socialdev/providers/twitter/twworker.js",
       "sidebarURL": "https://www.twitter.com/",
-      "URLPrefix": "https://www.twitter.com/",
+      "origin": "https://www.twitter.com/",
       "contentPatchPath": "resource://socialdev/providers/twitter/twcontentpatch.js"
     }
   }

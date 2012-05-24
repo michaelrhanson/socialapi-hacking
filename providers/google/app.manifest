@@ -4,7 +4,7 @@
       "name":"Google",
       "iconURL":"https://ssl.gstatic.com/s2/oz/images/faviconr2.ico",
       "sidebarURL":"https://m.google.com/app/plus/mp/460/#~loop:svt=circles&view=stream",
-      "URLPrefix":"https://m.google.com/app/plus/"
+      "origin":"https://m.google.com"
     }
   }
 }
