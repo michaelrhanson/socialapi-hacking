@@ -3,8 +3,8 @@
     "social": {
       "name": "Yammer",
       "iconURL": "https://www.yammer.com/favicon.ico",
-      "workerURL": "resource://socialdev/providers/yammer/worker.js",
-      "sidebarURL": "resource://socialdev/providers/yammer/yammer.html",
+      "workerURL": "resource://socialapi/providers/yammer/worker.js",
+      "sidebarURL": "resource://socialapi/providers/yammer/yammer.html",
       "origin": "https://www.yammer.com"
     }
   }

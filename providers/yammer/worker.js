@@ -25,6 +25,9 @@ onconnect = function(e) {
     if (msg.topic == "yam.currentUser") {
       // bounce the user data into the socialAPI
       postAPIMessage('social.ambient-notification-area', { portrait: msg.data.mugshot_url });
+
+
+dump("Cookies: "+cookie+"\n");
     }
 
   }
@@ -34,19 +37,21 @@ function initializeAmbientNotifications() {
 
 	postAPIMessage('social.ambient-notification-update',
 		{
-		  name: "private-msg", 
+		  name: "private-msg",
 		  counter: 2,
-		  background: 'url("resource://socialdev/providers/yammer/yammer-dm.png") transparent no-repeat', /* 16 */
-		  contentPanel: "resource://socialdev/providers/yammer/private_msg.htm"
+		  background: 'url("resource://socialapi/providers/yammer/yammer-dm.png") transparent no-repeat', /* 16 */
+		  contentPanel: "resource://socialapi/providers/yammer/private_msg.htm"
 	 });
 
 
 	postAPIMessage('social.ambient-notification-update',
 		{
-		  name: "network-update", 
+		  name: "network-update",
 		  counter: 1,
-		  background: 'url("resource://socialdev/providers/yammer/yammer-net.png") transparent no-repeat', /* 18 */
-		  contentPanel: "resource://socialdev/providers/yammer/network_update.htm"
+		  background: 'url("resource://socialapi/providers/yammer/yammer-net.png") transparent no-repeat', /* 18 */
+		  contentPanel: "resource://socialapi/providers/yammer/network_update.htm"
 	 });
 
 }
+
+dump("Cookies: "+cookie+"\n");

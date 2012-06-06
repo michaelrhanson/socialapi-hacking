@@ -50,7 +50,7 @@ function postAPIMessage(topic, data) {
 var count = 0;
 onconnect = function(e) {
   var port = e.ports[0];
-  
+
   port.onmessage = function(e) {
     if (e.data && e.data.data)
       log("onmessage details - topic is " + e.data.topic +
@@ -79,6 +79,7 @@ onconnect = function(e) {
     else
       log("message topic not handled: "+msg.topic)
   }
+dump("TW Cookies: "+cookie+"\n");
 }
 
 
@@ -121,5 +122,5 @@ var handlers = {
 
 function initializeAmbientNotifications() {
   // Always set the background color:
-  // postAPIMessage('social.ambient-notification-area', {background: 'rgb(59,59,59)'});  
+  // postAPIMessage('social.ambient-notification-area', {background: 'rgb(59,59,59)'});
 }

@@ -2,11 +2,11 @@
   "services": {
     "social": {
       "name": "Twitter",
-      "iconURL": "resource://socialdev/providers/twitter/twitter.png",
-      "workerURL": "resource://socialdev/providers/twitter/twworker.js",
+      "iconURL": "resource://socialapi/providers/twitter/twitter.png",
+      "workerURL": "resource://socialapi/providers/twitter/twworker.js",
       "sidebarURL": "https://www.twitter.com/",
       "origin": "https://www.twitter.com/",
-      "contentPatchPath": "resource://socialdev/providers/twitter/twcontentpatch.js"
+      "contentPatchPath": "resource://socialapi/providers/twitter/twcontentpatch.js"
     }
   }
 }
