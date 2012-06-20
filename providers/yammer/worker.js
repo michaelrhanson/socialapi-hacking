@@ -27,7 +27,6 @@ onconnect = function(e) {
       postAPIMessage('social.ambient-notification-area', { portrait: msg.data.mugshot_url });
 
 
-dump("Cookies: "+cookie+"\n");
     }
 
   }
@@ -54,4 +53,3 @@ function initializeAmbientNotifications() {
 
 }
 
-dump("Cookies: "+cookie+"\n");

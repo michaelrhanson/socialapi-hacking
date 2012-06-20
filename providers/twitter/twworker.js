@@ -79,7 +79,6 @@ onconnect = function(e) {
     else
       log("message topic not handled: "+msg.topic)
   }
-dump("TW Cookies: "+cookie+"\n");
 }
 
 
