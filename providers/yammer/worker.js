@@ -20,7 +20,6 @@ onconnect = function(e) {
     }
     if (msg.topic == "social.initialize") {
       apiPort = port;
-      initializeAmbientNotifications();
     }
     if (msg.topic == "yam.currentUser") {
       // bounce the user data into the socialAPI
@@ -31,6 +30,9 @@ onconnect = function(e) {
 		      displayName: msg.data.full_name,
 		      profileURL: msg.data.web_url
 		     });
+      if (msg.data.name) {
+        initializeAmbientNotifications();
+      }
     }
 
   }
