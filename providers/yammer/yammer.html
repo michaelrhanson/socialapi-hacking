@@ -5,15 +5,23 @@
 , network: 'mozilla.com'
 });
 
-// send the worker the currentUser data
-var yamInit = window.setInterval(function() {
-  if (yam.currentUser) {
-    window.clearInterval(yamInit);
-    navigator.mozSocial.getWorker().port.postMessage(
-      {topic: "yam.currentUser", data: yam.currentUser}
-    );
-  }
-}, 100);
+function theYamMonitor() {
+  yam.getLoginStatus( function(response) {
+    if (response.authResponse) {
+      navigator.mozSocial.getWorker().port.postMessage(
+        {topic: "yam.currentUser", data: yam.currentUser}
+      );
+    } else {
+      // no user session available, someone you don’t know
+      navigator.mozSocial.getWorker().port.postMessage(
+        {topic: "yam.currentUser", data: {}}
+      );
+    }
+    window.setTimeout(theYamMonitor, 1000);
+  });
+}
+
+window.setTimeout(theYamMonitor, 1000);
 
 </script>
 <div id="embedded-feed"></div>
