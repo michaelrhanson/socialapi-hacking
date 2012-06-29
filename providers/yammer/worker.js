@@ -24,9 +24,13 @@ onconnect = function(e) {
     }
     if (msg.topic == "yam.currentUser") {
       // bounce the user data into the socialAPI
-      postAPIMessage('social.ambient-notification-area', { portrait: msg.data.mugshot_url });
-
-
+      postAPIMessage('social.ambient-notification-area',
+		     {
+		      portrait: msg.data.mugshot_url,
+		      userName: msg.data.name,
+		      displayName: msg.data.full_name,
+		      profileURL: msg.data.web_url
+		     });
     }
 
   }
@@ -52,4 +56,3 @@ function initializeAmbientNotifications() {
 	 });
 
 }
-
